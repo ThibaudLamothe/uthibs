@@ -1,0 +1,27 @@
+# Data files
+# *.json
+*.jl
+*.csv
+
+# Auto generated files
+.ipynb_checkpoints
+.vscode
+.DS_Store
+*.pyc
+__pycache__
+.idea
+
+# Personnal documents
+slack.token
+*.token
+notes.txt
+credentials.py
+params.json
+
+# Environment
+Pipfile
+Pipfile.lock
+
+# Folder with package history
+dist
+uthibs.egg-info

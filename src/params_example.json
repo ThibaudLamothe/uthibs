@@ -1,0 +1,5 @@
+{
+    "DATA_PATH":"data_path",
+    "PICKLE_PATH":null,
+    "slack_token":"tocken_example"
+}

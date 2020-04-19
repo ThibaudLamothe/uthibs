@@ -22,7 +22,7 @@ import logging as __logging
 import datetime as __datetime
 import requests as __requests
 import configparser as __configparser
-
+import logger as __logger
 from IPython.core.display import display, HTML
 
 # Making local imports
@@ -127,6 +127,31 @@ def list_pickle():
     print(pickle_list)
 
 
+def flatten_json(nested_json):
+    """
+        Flatten json object with nested keys into a single level.
+        Args:
+            nested_json: A nested json object.
+        Returns:
+            The flattened json object if successful, None otherwise.
+    """
+    out = {}
+
+    def flatten(x, name=''):
+        if type(x) is dict:
+            for a in x:
+                flatten(x[a], name + a + '_')
+        elif type(x) is list:
+            i = 0
+            for a in x:
+                flatten(a, name + str(i) + '_')
+                i += 1
+        else:
+            out[name[:-1]] = x
+
+    flatten(nested_json)
+    return out
+
 # def get_time_range_info_from_df(df, display=True, datetime_col=None):
 #     if not datetime_col:
 #         start = str(df.index[0])
@@ -179,6 +204,7 @@ def save_df_to_excel(df, name='my_df_file.xlsx', open_=False):
     else:
         print('File send was not a dataFrame neither')
         # Add an assertion error ?
+
 
 
 def transfo_col(ancien, ponctuation=None, accent=None, replacer='_'):
@@ -542,6 +568,24 @@ def label_encoding(df, cols, verbose=False, get_encoders=False):
     if get_encoders:
         return local_df, encoders
     return local_df
+
+
+class log_wrapped_function(object):
+    def __init__(self, function):
+        self.function = function
+
+    def log_and_call(self, *arguments, **namedArguments):
+        __logger.info('>>> Function {}'.format(self.function.__name__))
+        local = locals()
+        if 'arguments' in local.keys():
+            __logger.debug('- arguments      : {}'.format(local['arguments']))
+        if 'namedArguments' in local.keys():
+            __logger.debug('- namedArguments : {}'.format(local['namedArguments']))
+        self.function.__call__(*arguments, **namedArguments)
+
+def print_parameters(function):
+    return log_wrapped_function(function).log_and_call
+
 
 
 if __name__ == "__main__":

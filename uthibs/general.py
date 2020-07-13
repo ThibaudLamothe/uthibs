@@ -47,6 +47,7 @@ List of functions :
  - (i) getPctValue
  - (i) star_print
  - (i) get_functions_in_file
+ - (i) spacify_number
 
 Indicators of importance :
 
@@ -568,6 +569,19 @@ def label_encoding(df, cols, verbose=False, get_encoders=False):
     if get_encoders:
         return local_df, encoders
     return local_df
+
+
+def spacify_number(number):
+    """ Takes a number and returns a string with spaces every 3 numbers
+    """
+    nb_rev = str(number)[::-1]
+    new_chain = ''
+    for val, letter in enumerate(nb_rev):
+        if val%3==0:
+            new_chain += ' '
+        new_chain += letter
+    final_chain = new_chain[::-1]
+    return final_chain
 
 
 class log_wrapped_function(object):

@@ -1,6 +1,11 @@
 import inspect
 
 def display_function_content(function):
+    """ Display the code of the selected function
+
+    Args:
+        function ([function]): function to display
+    """
     lines = inspect.getsource(function)
     for line in lines:
         print(line)

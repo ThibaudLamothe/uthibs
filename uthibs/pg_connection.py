@@ -196,22 +196,10 @@ class pgSqlManipulation():
 
     
 
-
-
     def get_tables(self):
         request = "SELECT * FROM pg_catalog.pg_tables WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema';"
         return self.sql_to_df(request)
 
     def test(self):
         print('Salut les amis')
-
-
-
-if __name__ == "__main__":
-   
-    
-
-    pass
-
-    from pg_connection import pgSqlManipulation
-    pg = pgSqlManipulation()
+        

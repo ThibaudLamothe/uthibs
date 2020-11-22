@@ -19,7 +19,6 @@ class PocotoTest():
             print(value)
 
     def check_missing_values(self, df):
-        # Checking missing values
         tmp = df.isnull().sum()
         tmp = tmp[tmp > 0].to_dict()
 
@@ -33,7 +32,6 @@ class PocotoTest():
         return df
 
     def check_min_max_values(self, df, list_of_col):
-        # Checking missing values
         print('\n> Checking missing values')
         for col in list_of_col:
             print(col, '-' 'min :\t', df[col].min())
@@ -44,7 +42,6 @@ class PocotoTest():
         return df[col].max() - df[col].min()
 
     def check_datetime_range(self, df):
-        # Checking datetime range
         start = df.datetime.min()
         end = df.datetime.max()
         range_ = self.get_range(df)
@@ -55,7 +52,6 @@ class PocotoTest():
         return df
 
     def check_four_information(self, df):
-        # Checking Four informations
         print('\n> Values per furnace')
         tmp = df['four'].value_counts().sort_index()
         for key, value in tmp.items():
@@ -63,7 +59,6 @@ class PocotoTest():
         return df
 
     def check_information(self, df, col='four', surname='Four'):
-        # Checking Four informations
         print('\n> Values per {}'.format(surname))
         tmp = df[col].value_counts().sort_index()
         for key, value in tmp.items():
@@ -81,6 +76,7 @@ class PocotoTest():
 
     def check_tag_information(self, df):
         range_ = self.get_range(df)
+        
         # Checking Tag informations
         print('\n> Values per Tag')
         nb_tag = df['tag'].nunique()
@@ -101,7 +97,6 @@ class PocotoTest():
         return df
 
     def check_alerts(self, df):
-        # Checking alerts
         print('\n> Checking alerts')
         tmp = df['alert_num'].value_counts()
         for key, value in tmp.items():

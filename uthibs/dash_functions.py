@@ -4,11 +4,15 @@ import dash_html_components as html
 from plotly import graph_objs as go
 
 
-# return html Table with dataframe values
 def df_to_table(df):
+    """Transforms a dataFrame into an html table for Dash
+    """
     return html.Table(
         # Header
-        [html.Tr([html.Th(col) for col in df.columns])] +
+        [
+            html.Tr([
+                html.Th(col) for col in df.columns
+                     ])] +
 
         # Body
         [
@@ -22,9 +26,10 @@ def df_to_table(df):
         ]
     )
 
-
-#  returns top indicator div
+  
 def indicator(color, text, id_value):
+    """returns top indicator div
+    """
     return html.Div(
         [
 
@@ -72,7 +77,7 @@ def simpleButton(name, **kwargs):
 
 def circle_number(value, max_value=100):
     values = [max_value - value, value]
-    colors = ['rgba(0, 0, 0,0)', "crimson"]  # "rgb(204, 255, 255)"]
+    colors = ['rgba(0, 0, 0, 0)', "crimson"]  # "rgb(204, 255, 255)"]
     direction = 'clockwise'
     rotation = 0 if value >= max_value / 2 else 360 / max_value * value
 

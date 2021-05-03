@@ -152,3 +152,35 @@ def get_categorical(df, verbose=False):
         print('\nCategorical Columns :\n ', cat_cols)
         print('\nNumerical Columns : \n', num_cols)
     return cat_cols, num_cols
+
+
+
+def compute_variances(df, col, agg_col='ID_SEGMENT', round_=3):
+    """
+    About Variance https://bit.ly/3eM23Es
+    - Variance inter : Variance of class's Average (variance résiduelle)
+    - Variance intra : Weighted Average of class's Variances (variance expliquée)
+    """
+
+    # Variance
+    var = np.var(df[col])
+    var = round(var, round_)
+    
+    # Variance Inter
+    var_inter = df.groupby(agg_col).agg({col:'mean'})
+    var_inter = statistics.variance(var_inter[col])
+    var_inter = round(var_inter, round_)
+    
+    # Variance Intra
+    var_intra = df.groupby(agg_col).agg({col:[np.var, 'count']})
+    var_intra.columns = ['var', 'count']
+    var_intra['VAR_INTRA'] = (var_intra['count'] / var_intra['count'].sum()) * var_intra['var']
+    var_intra = var_intra['VAR_INTRA'].round(round_).sum()
+
+    return {
+        'column':col,
+        'var':var,
+        'var_intra':var_intra,
+        'var_inter':var_inter,
+        'homogene':var_intra<var_inter
+    }

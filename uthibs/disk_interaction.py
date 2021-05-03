@@ -21,10 +21,10 @@ def url_to_json(url):
     return json_file
 
 
-def write_to_json_file(path, file_name, data):
+def save_json(file_name, data, path='./'):
     """Saving as a json file in one line"""
-    filePathNameWExt = path + file_name + '.json'
-    with open(filePathNameWExt, 'w') as fp:
+    file_path = path + file_name
+    with open(file_path, 'w') as fp:
         json.dump(data, fp)
 
 

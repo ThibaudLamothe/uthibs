@@ -1,4 +1,5 @@
 import inspect
+import warnings
 
 def display_function_content(function):
     """ Display the code of the selected function
@@ -26,4 +27,10 @@ def pandas():
     print("pd.set_option('chained_assignment', None)")
     print("pd.set_option('display.max_rows', 500)")
     print("pd.set_option('display.max_columns', 100)")
+
+
+def silent_warning():    
+    warnings.warn('Removing warning from execution context.')
+    warnings.filterwarnings("ignore")
+
 

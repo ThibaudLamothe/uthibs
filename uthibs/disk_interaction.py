@@ -95,4 +95,4 @@ def list_pickle():
 #   titre: Dérive du modèle - Ré-entrainement
 #   message: Le modèle dérive depuis 10 jours, un ré-entrainement vient d'être enclenché
 # webhoook:
-#   url: https://mousquetaires.webhook.office.com/webhookb2/a2e753ef-4c43-4ecc-a111-dde5c8767ed8@ebaeb74c-eeae-40f8-b755-10b0e2bf7528/IncomingWebhook/5c323e2b2e254db091e31464d032336e/49c2927e-6269-4317-9d68-d2d1057b07fb
+#   url: None

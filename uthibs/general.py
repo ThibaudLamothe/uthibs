@@ -16,13 +16,10 @@ import numpy as __np
 import math as __math
 import json as __json
 import pandas as __pd
-import pickle as __pickle
 import string as __string
 import logging as __logging
 import datetime as __datetime
-import requests as __requests
 import configparser as __configparser
-import logger as __logger
 from IPython.core.display import display, HTML
 
 # Making local imports
@@ -534,12 +531,12 @@ class log_wrapped_function(object):
         self.function = function
 
     def log_and_call(self, *arguments, **namedArguments):
-        __logger.info('>>> Function {}'.format(self.function.__name__))
+        __logging.info('>>> Function {}'.format(self.function.__name__))
         local = locals()
         if 'arguments' in local.keys():
-            __logger.debug('- arguments      : {}'.format(local['arguments']))
+            __logging.debug('- arguments      : {}'.format(local['arguments']))
         if 'namedArguments' in local.keys():
-            __logger.debug('- namedArguments : {}'.format(local['namedArguments']))
+            __logging.debug('- namedArguments : {}'.format(local['namedArguments']))
         self.function.__call__(*arguments, **namedArguments)
 
 def print_parameters(function):

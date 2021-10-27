@@ -3,8 +3,10 @@ from . import database_test
 from . import disk_interaction
 from . import general
 from . import geometry
-from . import ml
+from . import helper
 from . import ml_viz
+from . import ml
+from . import pg_connection
 from . import secundary
 from . import serie_gestion
 from . import slack

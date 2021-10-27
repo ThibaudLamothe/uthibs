@@ -546,6 +546,9 @@ def print_parameters(function):
     return log_wrapped_function(function).log_and_call
 
 
+def list_path(path):
+    # https://stackoverflow.com/questions/9727673/list-directory-tree-structure-in-python
+    pass
 
 if __name__ == "__main__":
     print("All functions have been loaded.")

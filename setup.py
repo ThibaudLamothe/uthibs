@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name='uthibs',                   # How you named your package folder (MyLib)
     packages=['uthibs'],             # Chose the same as "name"
-    version='0.0.1',                 # Start with a small number and increase it with every change you make
+    version='0.0.3',                 # Start with a small number and increase it with every change you make
     author='Thibaud Lamothe',        # Type in your name
     author_email='hello@etomal.com', # Type in your E-Mail
     license='MIT',                   # https://help.github.com/articles/licensing-a-repository
@@ -14,7 +14,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/ThibaudLamothe/uthibs',
-    download_url='https://github.com/user/reponame/archive/v_01.tar.gz',
+    download_url='https://github.com/ThibaudLamothe/uthibs/archive/refs/tags/v.0.0.1.tar.gz',
     keywords=['FUNCTIONS', 'UTILS', 'GENERIC'],
     install_requires=[
         'chart_studio==1.1.0',

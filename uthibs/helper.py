@@ -8,8 +8,7 @@ def display_function_content(function):
         function ([function]): function to display
     """
     lines = inspect.getsource(function)
-    for line in lines:
-        print(line)
+    print(lines)
 
 def notebook_autoreload():
     print('%load_ext autoreload')

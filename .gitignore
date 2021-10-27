@@ -25,3 +25,5 @@ Pipfile.lock
 # Folder with package history
 dist
 uthibs.egg-info
+.pytest_cache
+requirements.txt

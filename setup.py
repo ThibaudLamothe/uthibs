@@ -24,7 +24,7 @@ setuptools.setup(
         'matplotlib==3.4.3',
         'numpy==1.21.3',
         'pandas==1.3.4',
-        'Pillow==8.4.0',
+        'Pillow==9.0.0',
         'plotly==5.3.1',
         'psycopg2-binary==2.9.1',
         'requests==2.26.0',

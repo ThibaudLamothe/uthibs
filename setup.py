@@ -22,7 +22,7 @@ setuptools.setup(
         'dash-core-components==2.0.0',
         'dash-html-components==2.0.0',
         'matplotlib==3.4.3',
-        'numpy==1.21.3',
+        'numpy==1.22.0',
         'pandas==1.3.4',
         'Pillow==8.4.0',
         'plotly==5.3.1',

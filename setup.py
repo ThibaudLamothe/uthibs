@@ -27,7 +27,7 @@ setuptools.setup(
         'Pillow==8.4.0',
         'plotly==5.3.1',
         'psycopg2-binary==2.9.1',
-        'requests==2.26.0',
+        'requests==2.31.0',
         'ruptures==1.1.5',
         'scikit-learn==1.0.1',
         'scipy==1.7.1',

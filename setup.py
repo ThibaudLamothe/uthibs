@@ -30,7 +30,7 @@ setuptools.setup(
         'requests==2.26.0',
         'ruptures==1.1.5',
         'scikit-learn==1.0.1',
-        'scipy==1.7.1',
+        'scipy==1.10.0',
         'seaborn==0.11.2',
         'slacker==0.14.0',
     ],
